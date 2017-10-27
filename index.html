@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular intro!!!!</title>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="people.js" charset="utf-8"></script>
+    <script src="client.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="firstAng">
+    <!--
+    <h1> what up </h1>
+    <input type="text" ng-model="intro">
+    <p>{{intro}}</p>
+  -->
+
+    <div ng-controller = "commandCenter as stargate">
+      <!-- {{stargate.msg}} -->
+      {{stargate.currentPerson}}
+      <br><br>
+
+      <input type="text" ng-model="stargate.input1"><br>
+      <input type="text" ng-model="stargate.input2"><br>
+      {{stargate.input1}} <br>
+      {{stargate.input2}} <br><br>
+
+      <button ng-click="stargate.append()">Click me</button>
+        <ul>
+            <li ng-repeat="person in stargate.people">
+                <img ng-click="stargate.display(person)" ng-src="https://github.com/{{person.github}}.png?size=180">
+            </li>
+        </ul>
+
+    </div>
+
+  </body>
+</html>
